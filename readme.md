@@ -1,128 +1,128 @@
-DeepTB - Tuberculosis Detection System
-https://img.shields.io/badge/DeepTB-TB%2520Detection%2520System-blue
-https://img.shields.io/badge/version-1.0.0-green
-https://img.shields.io/badge/license-MIT-lightgrey
+🩺 DeepTB - Tuberculosis Detection System
 
-A comprehensive tuberculosis detection system that leverages AI to analyze chest X-rays and provide instant TB screening with detailed reports and analytics.
+A comprehensive AI-powered tuberculosis detection system that analyzes chest X-rays to provide instant TB screening, severity analysis, and detailed medical reports — empowering doctors and patients with intelligent healthcare insights.
 
 🚀 Features
 🔬 AI-Powered Detection
-Fine-tuned DenseNet121 model for accurate TB detection
-Severity analysis with confidence scores
-Real-time predictions via FastAPI microservice
+Fine-tuned DenseNet121 deep learning model for high-accuracy TB detection
+
+Confidence-based severity analysis
+
+FastAPI microservice for real-time model inference
 
 👥 User Management
-Secure JWT authentication with 2FA
-Role-based access (Patients, Doctors)
-Email verification and OTP-based login
-Profile management and history tracking
+Secure JWT Authentication with 2FA (Two-Factor Authentication)
+
+Role-based access control for:
+
+👨‍⚕️ Doctors
+
+🧑‍🦰 Patients
+
+Email verification & OTP-based login
+
+User profile & medical history tracking
 
 📊 Medical Workflow
-X-ray upload with secure storage
-AI analysis with instant results
-Doctor review and manual approval
-PDF report generation
-Patient progress tracking
+Secure X-ray upload and encrypted storage
+
+Instant AI analysis with visualization and prediction results
+
+Doctor review and manual confirmation before finalizing diagnosis
+
+Automated PDF report generation
+
+Patient progress tracking over multiple visits
 
 📈 Analytics & Insights
-TB case trends and statistics
-Model performance metrics
-Geographic hotspot mapping
-Sending generated report on Email 
+Interactive dashboard for:
 
+TB case trends and demographics
+
+Model accuracy and confidence metrics
+
+Geographic hotspot mapping
+
+Automated email delivery of medical reports to patients/doctors
 
 🛠 Tech Stack
-Frontend
-React - UI framework
-Vercel - static hosting
+🖥️ Frontend
+React.js – Modern UI framework
 
-Backend
-Node.js + Express 
-Render, Vercel, Hugging Face
-JWT - Authentication
-bcrypt - Password hashing
+Tailwind CSS – Responsive design system
 
-Database & Storage
-MongoDB Atlas 
-Supabase 
-Field-level encryption - Data security
+Vercel – Frontend hosting and deployment
 
-Machine Learning
-TensorFlow/Keras - Model training
-FastAPI - ML microservice
-Render - Free inference hosting
+⚙️ Backend
+Node.js + Express – Core backend server
 
-Services
-Brevo (SendinBlue) 
-ReportLab - PDF generation
+JWT – Authentication & authorization
 
-🚀 Quick Start
-Prerequisites
-Node.js 16+
-Python 3.8+
-MongoDB Atlas account
-Supabase account
+bcrypt – Secure password hashing
 
-🎯 Usage
-For Patients
-Register/Login with email verification
-Upload chest X-ray through secure portal
-Receive AI analysis within Seconds
-Get doctor-reviewed report via email
-Track progress in personal dashboard
-
-For Doctors
-Review AI predictions in dashboard
-Approve/reject AI findings
-Add manual notes and signatures
-Generate comprehensive reports
-Monitor patient cases
-Sending report on patient registered Gmail
+Render / Vercel / Hugging Face – API & ML service deployment
 
 🧠 Machine Learning
-Model Architecture
-Base Model: DenseNet121
-Input Size: 224x224 pixels
-Output: Binary classification (TB/Normal)
-Confidence Score: 0-100%
-Training Data
-Source: Kaggle Tuberculosis Chest X-ray Database
-Samples: 700+ annotated X-rays
+TensorFlow / Keras – Model training and optimization
 
-Validation: 5-fold cross-validation
-Augmentation: Rotation, zoom, flip
-Performance Metrics
-Accuracy: 96.2%
-Precision: 95.8%
-Recall: 96.5%
-F1-Score: 96.1%
+FastAPI – ML inference microservice
 
-🛡 Security
-Data Protection
-JWT tokens for session management
-bcrypt hashing for passwords
-2FA via email OTP
-Rate limiting on authentication endpoints
-Helmet.js for secure headers
-Privacy Compliance
-Encrypted database fields for sensitive data
-Secure file storage with access controls
-Audit logs for all medical actions
+Hosted on Render for free scalable deployment
+
+🗄️ Database & Storage
+MongoDB Atlas – Cloud database
+
+Supabase – Secure media storage
+
+Field-level encryption for sensitive medical data
+
+📧 Services
+Brevo (SendinBlue) – Email and OTP services
+
+🧩 System Architecture Overview
+scss
+Copy code
+Frontend (React + Tailwind)
+        ↓
+Node.js + Express (API Gateway)
+        ↓
+FastAPI Microservice (Model Inference)
+        ↓
+MongoDB Atlas (Data Storage)
+        ↓
+Supabase (X-ray Storage)
+🔐 Security Highlights
+End-to-end data encryption
+
+JWT + 2FA authentication
+
+OTP-based login & email verification
+
+Field-level encryption for medical records
+
+Secure file handling & upload validation
+
+
+📚 Future Enhancements
+Integration with government TB databases
+
+AI explainability (Grad-CAM visualizations)
+
+Doctor collaboration and second opinions
+
+Multi-language support
+
+Mobile app (React Native)
 
 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License – see the LICENSE file for details.
 
-🙏 Acknowledgments
-Kaggle for the TB Chest X-ray Dataset
-TensorFlow team for ML frameworks
-Render & Vercel for free hosting
-Brevo for email services
+🤝 Contributing
+Contributions, issues, and feature requests are welcome!
+Feel free to fork this repo and submit a pull request.
 
-📞 Support
-For support and questions:
+🌐 Deployment Links
+Frontend (React) – Vercel Deployment
 
-📧 Email: hardikv715@gmail.com
-🐛 Issues: GitHub Issues page
-📚 Docs: Comprehensive documentation
-
-Built with ❤️ for global healthcare accessibility
+Backend (Express API) – Render Deployment
+ML Service (FastAPI) – Hugging Face Space
