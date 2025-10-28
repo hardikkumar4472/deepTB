@@ -1,8 +1,8 @@
 import { supabase } from "../config/supabase.js";
-import fs from "fs";
 
 export const uploadToSupabase = async (file) => {
   try {
+    // ✅ CHANGED: Use file.buffer instead of fileStream
     const fileBuffer = file.buffer;
     
     const { data, error } = await supabase.storage
@@ -15,12 +15,14 @@ export const uploadToSupabase = async (file) => {
 
     if (error) throw error;
 
+    // ✅ CHANGED: Fixed public URL retrieval
     const { data: urlData } = supabase.storage
       .from(process.env.SUPABASE_BUCKET)
       .getPublicUrl(data.path);
-    
+
     return urlData.publicUrl;
   } catch (err) {
     throw new Error("Supabase Upload Failed: " + err.message);
   }
+  // ✅ REMOVED: No finally block needed
 };
