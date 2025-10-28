@@ -7,6 +7,14 @@ import io
 import os
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 try:
     model = tf.keras.models.load_model('tb_model_balanced.h5')
