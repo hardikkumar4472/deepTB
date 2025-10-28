@@ -5,6 +5,7 @@ from PIL import Image
 import numpy as np
 import io
 import os
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 app.add_middleware(
