@@ -176,8 +176,8 @@ const Dashboard = () => {
             <>
               <History className="h-12 w-12 text-[#FF8F8F] mx-auto mb-4 animate-bounce" />
               <p className="text-slate-600">
-                You have made {stats.totalPredictions} prediction{stats.totalPredictions !== 1 ? 's' : ''} and 
-                generated {stats.totalReports} report{stats.totalReports !== 1 ? 's' : ''}
+                You have made {stats.totalPredictions} prediction{stats.totalPredictions !== 1 ? 's' : ''} and our system has
+                generated {stats.totalReports} report{stats.totalReports !== 1 ? 's' : ''} till now
               </p>
               <p className="text-sm text-slate-400 mt-1">
                 Check your history for detailed results and reports
