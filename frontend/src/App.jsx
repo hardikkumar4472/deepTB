@@ -90,10 +90,9 @@
 
 // export default App;
 
-       
-
-import React, { useEffect } from 'react';
+ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 import { AuthProvider } from './context/AuthContext';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
@@ -110,22 +109,28 @@ import ProtectedRoute from './components/layout/ProtectedRoute';
 import PatientManagement from './pages/PatientManagement';
 import './App.css';
 
-// ✅ Component to send page views to GA on route change
+// ✅ Initialize Google Analytics (GA4)
+const TRACKING_ID = "G-TY5ZVFF2QZ";
+
+// ✅ Track page views when route changes
 const TrackPageView = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (window.gtag) {
-      window.gtag('config', 'G-TY5ZVFF2QZ', {
-        page_path: location.pathname + location.search,
-      });
-    }
+    ReactGA.send({
+      hitType: "pageview",
+      page: location.pathname + location.search,
+    });
   }, [location]);
 
   return null;
 };
 
 function App() {
+  useEffect(() => {
+    ReactGA.initialize(TRACKING_ID);
+  }, []);
+
   return (
     <AuthProvider>
       <Router>
@@ -142,53 +147,29 @@ function App() {
             {/* Patient Protected Routes */}
             <Route
               path="/dashboard"
-              element={
-                <ProtectedRoute>
-                  <Dashboard />
-                </ProtectedRoute>
-              }
+              element={<ProtectedRoute><Dashboard /></ProtectedRoute>}
             />
             <Route
               path="/predict"
-              element={
-                <ProtectedRoute>
-                  <Prediction />
-                </ProtectedRoute>
-              }
+              element={<ProtectedRoute><Prediction /></ProtectedRoute>}
             />
             <Route
               path="/history"
-              element={
-                <ProtectedRoute>
-                  <History />
-                </ProtectedRoute>
-              }
+              element={<ProtectedRoute><History /></ProtectedRoute>}
             />
 
             {/* Doctor Protected Routes */}
             <Route
               path="/doctor/dashboard"
-              element={
-                <ProtectedRoute doctorOnly={true}>
-                  <DoctorDashboard />
-                </ProtectedRoute>
-              }
+              element={<ProtectedRoute doctorOnly={true}><DoctorDashboard /></ProtectedRoute>}
             />
             <Route
               path="/doctor/reports"
-              element={
-                <ProtectedRoute doctorOnly={true}>
-                  <Reports />
-                </ProtectedRoute>
-              }
+              element={<ProtectedRoute doctorOnly={true}><Reports /></ProtectedRoute>}
             />
             <Route
               path="/doctor/patients"
-              element={
-                <ProtectedRoute doctorOnly={true}>
-                  <PatientManagement />
-                </ProtectedRoute>
-              }
+              element={<ProtectedRoute doctorOnly={true}><PatientManagement /></ProtectedRoute>}
             />
           </Routes>
         </Layout>
