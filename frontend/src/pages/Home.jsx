@@ -187,7 +187,7 @@ const Home = () => {
       <section className="text-center">
         <div className="flex justify-center space-x-6">
           <a 
-            href="https://instagram.com" 
+            href="https://www.instagram.com/deep_tb_?igsh=ZmpnNGZsY3o3Zmxi" 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-white/60 backdrop-blur-lg rounded-2xl p-4 border border-[#E4405F]/20 shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 group"
@@ -195,13 +195,13 @@ const Home = () => {
             <Instagram className="h-6 w-6 text-[#E4405F] group-hover:scale-110 transition-transform duration-300" />
           </a>
           <a 
-            href="mailto:contact@deeptb.com" 
+            href="mailto:civicconnectpvt@gmail.com" 
             className="bg-white/60 backdrop-blur-lg rounded-2xl p-4 border border-[#EA4335]/20 shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 group"
           >
             <Mail className="h-6 w-6 text-[#EA4335] group-hover:scale-110 transition-transform duration-300" />
           </a>
           <a 
-            href="https://youtube.com" 
+            href="https://www.youtube.com/@ShubhamSahay-l9l" 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-white/60 backdrop-blur-lg rounded-2xl p-4 border border-[#FF0000]/20 shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 group"
