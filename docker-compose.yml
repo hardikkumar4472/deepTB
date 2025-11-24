@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: tb_backend
+    ports:
+      - "5000:5000" 
+    volumes:
+      - ./backend:/app 
+      - /app/node_modules
+    environment:
+      NODE_ENV: development
+      ML_API_URL: http://ml-api:8000 
+    restart: unless-stopped
+
+  ml-api:
+    build:
+      context: ./ml-api
+      dockerfile: Dockerfile
+    container_name: tb_ml_api
+    ports:
+      - "8000:8000" 
+    volumes:
+      - ./ml-api:/app
+      - ./data:/app/data 
+    restart: unless-stopped
+
+networks:
+  default:
+    driver: bridge
