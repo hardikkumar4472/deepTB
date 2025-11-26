@@ -6,11 +6,12 @@ import { resultsAPI, reportsAPI } from '../services/api';
 import { Upload, History, User, Activity, FileText } from 'lucide-react';
 
 const Dashboard = () => {
-  const { user } = useAuth();
-  const [stats, setStats] = useState({
-    totalPredictions: 0,
-    totalReports: 0
-  });
+  // const { user } = useAuth();
+  // const [stats, setStats] = useState({
+  //   totalPredictions: 0,
+  //   totalReports: 0
+  // });
+
   const [loading, setLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
 
